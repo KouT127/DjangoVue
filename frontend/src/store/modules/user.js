@@ -15,8 +15,8 @@ const mutations = {
 
 // Public
 const actions = {
-  async getDessertsAction({ commit, state, dispatch }, rowPerPage) {
-    const endpoint = 'http://www.mocky.io/v2/5c49bb6a3400005c002692bc'
+  async getUsersAction({ commit, state, dispatch }, rowPerPage) {
+    const endpoint = 'http://localhost:8000/api/users'
     const payload = {
       users: [],
     }
@@ -31,6 +31,7 @@ const actions = {
       })
       return Promise.reject(error)
     }
+    console.log(response)
     payload.users = response.data.users
     // mutationを触る場合は、commit
     commit('getUsers', payload)
