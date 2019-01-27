@@ -1,41 +1,45 @@
 
-import axios from 'axios'
+
+import api from '../../api/user'
 
 //Private
 const state = {
-  users: []
+  users: [],
+  pages: 1
 }
 
 //Private
 const mutations = {
-    getUsers(state, payload) {
-        state.desserts = payload.users
+    setUsers(state, payload) {
+      state.users = payload.users
     },
+    setPages(state, pages){
+      state.pages = pages
+    }
 }
 
 // Public
 const actions = {
-  async getUsersAction({ commit, state, dispatch }, rowPerPage) {
+  async getUsersAction({ commit, dispatch }, rowPerPage) {
     const endpoint = process.env.API_URL + '/api/users/'
     const payload = {
       users: [],
+      rowPerPage: 0
     }
-    const response = await axios.get(endpoint)
-    .catch(err => {
-     return Promise.reject(err.response)
+    const response = await api.getUsers('/api/users/').catch((error) => {
+      console.log(error)
+      return
     })
-    if (response.status !== 200) {
-      let error = error({
-        statusCode: response.status,
-        message: response.data.message,
-      })
-      return Promise.reject(error)
-    }
-    console.log(response)
-    payload.users = response.data.users
+    payload.users = response.data
+    payload.rowPerPage = rowPerPage
     // mutationを触る場合は、commit
-    commit('getUsers', payload)
-    return Promise.resolve()
+    commit('setUsers', payload)
+    dispatch('calcPage', payload)
+  },
+  calcPage({commit}, payload){
+    console.log(payload)
+    const pages = Math.ceil(payload.users.length / payload.rowPerPage)
+    commit('setPages', pages)
   }
 }
 
@@ -43,6 +47,9 @@ const actions = {
 const getters = {
   getUsers: (state, getter) => {
     return state.users
+  },
+  getPages: (state, getter) => {
+    return state.pages
   }
 }
 
