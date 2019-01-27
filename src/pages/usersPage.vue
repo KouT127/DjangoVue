@@ -36,7 +36,7 @@
       return {
         search: '',
         pagination: {
-            rowsPerPage: 1
+            rowsPerPage: 15
         },
         selected: [],
         headers: [
