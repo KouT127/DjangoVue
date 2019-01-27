@@ -1,4 +1,4 @@
-# frontend
+# DjangoVue
 
 > A Vue.js project
 
