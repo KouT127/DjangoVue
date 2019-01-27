@@ -16,7 +16,7 @@ const mutations = {
 // Public
 const actions = {
   async getUsersAction({ commit, state, dispatch }, rowPerPage) {
-    const endpoint = 'http://localhost:8000/api/users'
+    const endpoint = process.env.API_URL + '/api/users/'
     const payload = {
       users: [],
     }

@@ -128,9 +128,9 @@ STATICFILES_DIRS = [
 ]
 
 # CORS
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
 
 try:
-    from local_settings import *
+    from .local_settings import CORS_ORIGIN_WHITELIST, DEBUG
 except ImportError:
     pass
