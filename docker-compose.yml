@@ -1,6 +1,27 @@
 version: '3'
 
 services:
+  nginx:
+    image: nginx
+    ports:
+      - "81:81"
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+      - ./dist/static:/static
+      - ./nginx/log:/var/log/nginx
+    depends_on:
+      - app
+  app:
+    build: ./python
+    volumes:
+      - .:/code
+    command:  uwsgi --ini /code/DjangoVue/django.ini
+    # command: python manage.py runserver 127.0.0.1:8000
+    expose:
+      - "8000"
+    depends_on:
+      - db
   db:
     image: mysql
     volumes:
@@ -11,14 +32,9 @@ services:
       MYSQL_USER: django
       MYSQL_PASSWORD: password
       MYSQL_DATABASE: django
+      TZ: "Asia/Tokyo"
     ports:
       - "3306:3306"
-  python:
-    build: ./python
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/code
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
+
+volumes:
+  db:

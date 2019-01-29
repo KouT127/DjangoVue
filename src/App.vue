@@ -3,7 +3,7 @@
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
         <v-toolbar-title>
-          <v-btn flat>Django & Vue</v-btn>
+          <v-btn flat to="/users">Django & Vue</v-btn>
         </v-toolbar-title>
       </v-toolbar-title>
       <v-spacer></v-spacer>
