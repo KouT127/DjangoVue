@@ -58,7 +58,7 @@ ROOT_URLCONF = 'DjangoVue.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'dist')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,14 +131,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-
+# Static用のRoutePass
+STATIC_URL = '/static/'
+# setting時に参照する場所を決めとく値、Linuxで絶対パス
+# BASE_DIR/templete/static
+STATIC_ROOT = os.path.join(BASE_DIR, "templates/static/")
+# 静的ファイルを分ける場合
 STATICFILES_DIRS = [
-  os.path.join(BASE_DIR, 'dist/static'),
+  os.path.join(BASE_DIR, 'static'),
 ]
 
 # CORS
+# この方法を用いずに、Webpackでやっても良い
 CORS_ORIGIN_ALLOW_ALL = False
 
 try:
