@@ -19,11 +19,14 @@ from django.contrib import admin
 from django.conf.urls import url,include
 from users.urls import router as user_router
 from django.views.generic import TemplateView
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
     url(r'^api/', include(user_router.urls)),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
     url(r'^users/$', TemplateView.as_view(template_name='index.html')),
+    url(r'api/auth/', obtain_jwt_token),
+    url(r'^api/refresh/', refresh_jwt_token),
     # 静的ファイルのルーティング /static/がきた場合
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 

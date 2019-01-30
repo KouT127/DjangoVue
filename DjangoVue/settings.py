@@ -78,20 +78,20 @@ WSGI_APPLICATION = 'DjangoVue.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'django',
-    #     'USER': 'root',
-    #     'PASSWORD': 'password',
-    #     'HOST': 'db',
-    #     'PORT': 3306,
-    # },
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
         'USER': 'root',
         'PASSWORD': 'password',
-    }
+        'HOST': 'db',
+        'PORT': 3306,
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'django',
+    #     'USER': 'root',
+    #     'PASSWORD': 'password',
+    # }
 }
 
 
@@ -113,6 +113,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Rest
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/

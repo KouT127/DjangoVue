@@ -16890,3 +16890,1416 @@ gracefully (RE)spawned uWSGI master process (pid: 1)
 spawned uWSGI worker 1 (pid: 70, cores: 1)
 spawned uWSGI http 1 (pid: 72)
 Python auto-reloader enabled
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 12:19:12 2019] ***
+compiled with version: 6.3.0 20170516 on 29 January 2019 13:45:52
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: 1bd6dadfc91f
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+writing pidfile to /code/DjangoVue/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:34637 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x55a6beed9350
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55a6beed9350 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI http 1 (pid: 9)
+Internal Server Error: /obtain_jwt_token/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 183, in import_from_string
+    module = import_module(module_path)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rest_framework_jwt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 111, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 491, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 533, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 526, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./DjangoVue/urls.py", line 20, in <module>
+    from users.urls import router as user_router
+  File "./users/urls.py", line 1, in <module>
+    from rest_framework import routers
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/routers.py", line 28, in <module>
+    from rest_framework import views
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 19, in <module>
+    from rest_framework.schemas import DefaultSchema
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/schemas/__init__.py", line 32, in <module>
+    authentication_classes=api_settings.DEFAULT_AUTHENTICATION_CLASSES,
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in perform_import
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in <listcomp>
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 187, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'rest_framework_jwt.authentication.JSONWebTokenAuthentication' for API setting 'DEFAULT_AUTHENTICATION_CLASSES'. ModuleNotFoundError: No module named 'rest_framework_jwt'.
+[pid: 7|app: 0|req: 1/1] 172.27.0.4 () {32 vars in 386 bytes} [Wed Jan 30 12:19:32 2019] POST /obtain_jwt_token/ => generated 192725 bytes in 1086 msecs (HTTP/1.0 500) 4 headers in 138 bytes (1 switches on core 0)
+Internal Server Error: /obtain_jwt_token
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 183, in import_from_string
+    module = import_module(module_path)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rest_framework_jwt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/deprecation.py", line 90, in __call__
+    response = self.process_request(request)
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 52, in process_request
+    if self.should_redirect_with_slash(request):
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 70, in should_redirect_with_slash
+    not is_valid_path(request.path_info, urlconf) and
+  File "/usr/local/lib/python3.7/site-packages/django/urls/base.py", line 157, in is_valid_path
+    resolve(path, urlconf)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 491, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 533, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 526, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./DjangoVue/urls.py", line 20, in <module>
+    from users.urls import router as user_router
+  File "./users/urls.py", line 1, in <module>
+    from rest_framework import routers
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/routers.py", line 28, in <module>
+    from rest_framework import views
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 19, in <module>
+    from rest_framework.schemas import DefaultSchema
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/schemas/__init__.py", line 32, in <module>
+    authentication_classes=api_settings.DEFAULT_AUTHENTICATION_CLASSES,
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in perform_import
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in <listcomp>
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 187, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'rest_framework_jwt.authentication.JSONWebTokenAuthentication' for API setting 'DEFAULT_AUTHENTICATION_CLASSES'. ModuleNotFoundError: No module named 'rest_framework_jwt'.
+[pid: 7|app: 0|req: 2/2] 172.27.0.4 () {50 vars in 922 bytes} [Wed Jan 30 12:23:04 2019] GET /obtain_jwt_token => generated 209334 bytes in 119 msecs (HTTP/1.0 500) 2 headers in 77 bytes (1 switches on core 0)
+Internal Server Error: /obtain_jwt_token
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 183, in import_from_string
+    module = import_module(module_path)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rest_framework_jwt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/deprecation.py", line 90, in __call__
+    response = self.process_request(request)
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 52, in process_request
+    if self.should_redirect_with_slash(request):
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 70, in should_redirect_with_slash
+    not is_valid_path(request.path_info, urlconf) and
+  File "/usr/local/lib/python3.7/site-packages/django/urls/base.py", line 157, in is_valid_path
+    resolve(path, urlconf)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 491, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 533, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 526, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./DjangoVue/urls.py", line 20, in <module>
+    from users.urls import router as user_router
+  File "./users/urls.py", line 1, in <module>
+    from rest_framework import routers
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/routers.py", line 28, in <module>
+    from rest_framework import views
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 19, in <module>
+    from rest_framework.schemas import DefaultSchema
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/schemas/__init__.py", line 32, in <module>
+    authentication_classes=api_settings.DEFAULT_AUTHENTICATION_CLASSES,
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in perform_import
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in <listcomp>
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 187, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'rest_framework_jwt.authentication.JSONWebTokenAuthentication' for API setting 'DEFAULT_AUTHENTICATION_CLASSES'. ModuleNotFoundError: No module named 'rest_framework_jwt'.
+[pid: 7|app: 0|req: 3/3] 172.27.0.4 () {50 vars in 923 bytes} [Wed Jan 30 12:23:09 2019] POST /obtain_jwt_token => generated 209341 bytes in 155 msecs (HTTP/1.0 500) 2 headers in 77 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./DjangoVue/settings.py has been modified
+gateway "uWSGI http 1" has been buried (pid: 9)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 7)...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /code
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (127.0.0.1:34637)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /code/DjangoVue/django.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 12:25:11 2019] ***
+compiled with version: 6.3.0 20170516 on 29 January 2019 13:45:52
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: 1bd6dadfc91f
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 5
+uwsgi socket 0 bound to TCP address 127.0.0.1:33417 (port auto-assigned) fd 4
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x55e31c0ca340
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55e31c0ca340 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 10, cores: 1)
+spawned uWSGI http 1 (pid: 12)
+Python auto-reloader enabled
+Internal Server Error: /obtain_jwt_token
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 183, in import_from_string
+    module = import_module(module_path)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rest_framework_jwt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/deprecation.py", line 90, in __call__
+    response = self.process_request(request)
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 52, in process_request
+    if self.should_redirect_with_slash(request):
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 70, in should_redirect_with_slash
+    not is_valid_path(request.path_info, urlconf) and
+  File "/usr/local/lib/python3.7/site-packages/django/urls/base.py", line 157, in is_valid_path
+    resolve(path, urlconf)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 491, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 533, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 526, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./DjangoVue/urls.py", line 20, in <module>
+    from users.urls import router as user_router
+  File "./users/urls.py", line 1, in <module>
+    from rest_framework import routers
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/routers.py", line 28, in <module>
+    from rest_framework import views
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 19, in <module>
+    from rest_framework.schemas import DefaultSchema
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/schemas/__init__.py", line 32, in <module>
+    authentication_classes=api_settings.DEFAULT_AUTHENTICATION_CLASSES,
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in perform_import
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in <listcomp>
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 187, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'rest_framework_jwt.authentication.JSONWebTokenAuthentication' for API setting 'DEFAULT_AUTHENTICATION_CLASSES'. ModuleNotFoundError: No module named 'rest_framework_jwt'.
+[pid: 10|app: 0|req: 1/1] 172.27.0.4 () {50 vars in 923 bytes} [Wed Jan 30 12:25:13 2019] POST /obtain_jwt_token => generated 210368 bytes in 339 msecs (HTTP/1.0 500) 2 headers in 77 bytes (1 switches on core 0)
+Internal Server Error: /api/token
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 183, in import_from_string
+    module = import_module(module_path)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rest_framework_jwt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/deprecation.py", line 90, in __call__
+    response = self.process_request(request)
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 52, in process_request
+    if self.should_redirect_with_slash(request):
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 70, in should_redirect_with_slash
+    not is_valid_path(request.path_info, urlconf) and
+  File "/usr/local/lib/python3.7/site-packages/django/urls/base.py", line 157, in is_valid_path
+    resolve(path, urlconf)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 491, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 533, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 526, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./DjangoVue/urls.py", line 20, in <module>
+    from users.urls import router as user_router
+  File "./users/urls.py", line 1, in <module>
+    from rest_framework import routers
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/routers.py", line 28, in <module>
+    from rest_framework import views
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 19, in <module>
+    from rest_framework.schemas import DefaultSchema
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/schemas/__init__.py", line 32, in <module>
+    authentication_classes=api_settings.DEFAULT_AUTHENTICATION_CLASSES,
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in perform_import
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in <listcomp>
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 187, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'rest_framework_jwt.authentication.JSONWebTokenAuthentication' for API setting 'DEFAULT_AUTHENTICATION_CLASSES'. ModuleNotFoundError: No module named 'rest_framework_jwt'.
+[pid: 10|app: 0|req: 2/2] 172.27.0.4 () {50 vars in 909 bytes} [Wed Jan 30 12:31:54 2019] POST /api/token => generated 209345 bytes in 132 msecs (HTTP/1.0 500) 2 headers in 77 bytes (1 switches on core 0)
+Internal Server Error: /obtain_jwt_token
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 183, in import_from_string
+    module = import_module(module_path)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rest_framework_jwt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/deprecation.py", line 90, in __call__
+    response = self.process_request(request)
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 52, in process_request
+    if self.should_redirect_with_slash(request):
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 70, in should_redirect_with_slash
+    not is_valid_path(request.path_info, urlconf) and
+  File "/usr/local/lib/python3.7/site-packages/django/urls/base.py", line 157, in is_valid_path
+    resolve(path, urlconf)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 491, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 533, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 526, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./DjangoVue/urls.py", line 20, in <module>
+    from users.urls import router as user_router
+  File "./users/urls.py", line 1, in <module>
+    from rest_framework import routers
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/routers.py", line 28, in <module>
+    from rest_framework import views
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 19, in <module>
+    from rest_framework.schemas import DefaultSchema
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/schemas/__init__.py", line 32, in <module>
+    authentication_classes=api_settings.DEFAULT_AUTHENTICATION_CLASSES,
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in perform_import
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in <listcomp>
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 187, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'rest_framework_jwt.authentication.JSONWebTokenAuthentication' for API setting 'DEFAULT_AUTHENTICATION_CLASSES'. ModuleNotFoundError: No module named 'rest_framework_jwt'.
+[pid: 10|app: 0|req: 3/3] 172.27.0.4 () {50 vars in 923 bytes} [Wed Jan 30 12:37:19 2019] POST /obtain_jwt_token => generated 209462 bytes in 135 msecs (HTTP/1.0 500) 2 headers in 77 bytes (1 switches on core 0)
+Internal Server Error: /obtain_jwt_token/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 183, in import_from_string
+    module = import_module(module_path)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rest_framework_jwt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 111, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 491, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 533, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 526, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./DjangoVue/urls.py", line 20, in <module>
+    from users.urls import router as user_router
+  File "./users/urls.py", line 1, in <module>
+    from rest_framework import routers
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/routers.py", line 28, in <module>
+    from rest_framework import views
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 19, in <module>
+    from rest_framework.schemas import DefaultSchema
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/schemas/__init__.py", line 32, in <module>
+    authentication_classes=api_settings.DEFAULT_AUTHENTICATION_CLASSES,
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in perform_import
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in <listcomp>
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 187, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'rest_framework_jwt.authentication.JSONWebTokenAuthentication' for API setting 'DEFAULT_AUTHENTICATION_CLASSES'. ModuleNotFoundError: No module named 'rest_framework_jwt'.
+[pid: 10|app: 0|req: 4/4] 172.27.0.4 () {50 vars in 925 bytes} [Wed Jan 30 12:37:21 2019] POST /obtain_jwt_token/ => generated 193922 bytes in 103 msecs (HTTP/1.0 500) 4 headers in 138 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./DjangoVue/settings.py has been modified
+gateway "uWSGI http 1" has been buried (pid: 12)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 10)...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /code
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 4 mapped to socket 0 (127.0.0.1:33417)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /code/DjangoVue/django.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 12:37:42 2019] ***
+compiled with version: 6.3.0 20170516 on 29 January 2019 13:45:52
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: 1bd6dadfc91f
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 5
+uwsgi socket 0 bound to TCP address 127.0.0.1:35445 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x559b30e7f340
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x559b30e7f340 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 13, cores: 1)
+spawned uWSGI http 1 (pid: 15)
+Python auto-reloader enabled
+Internal Server Error: /obtain_jwt_token/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 183, in import_from_string
+    module = import_module(module_path)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rest_framework_jwt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 111, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 491, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 533, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/site-packages/django/urls/resolvers.py", line 526, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./DjangoVue/urls.py", line 20, in <module>
+    from users.urls import router as user_router
+  File "./users/urls.py", line 1, in <module>
+    from rest_framework import routers
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/routers.py", line 28, in <module>
+    from rest_framework import views
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 19, in <module>
+    from rest_framework.schemas import DefaultSchema
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/schemas/__init__.py", line 32, in <module>
+    authentication_classes=api_settings.DEFAULT_AUTHENTICATION_CLASSES,
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 227, in __getattr__
+    val = perform_import(val, attr)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in perform_import
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 172, in <listcomp>
+    return [import_from_string(item, setting_name) for item in val]
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/settings.py", line 187, in import_from_string
+    raise ImportError(msg)
+ImportError: Could not import 'rest_framework_jwt.authentication.JSONWebTokenAuthentication' for API setting 'DEFAULT_AUTHENTICATION_CLASSES'. ModuleNotFoundError: No module named 'rest_framework_jwt'.
+[pid: 13|app: 0|req: 1/1] 172.27.0.4 () {50 vars in 925 bytes} [Wed Jan 30 12:37:43 2019] POST /obtain_jwt_token/ => generated 195152 bytes in 298 msecs (HTTP/1.0 500) 4 headers in 138 bytes (1 switches on core 0)
+gateway "uWSGI http 1" has been buried (pid: 15)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /code
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (127.0.0.1:35445)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /code/DjangoVue/django.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 12:39:19 2019] ***
+compiled with version: 6.3.0 20170516 on 29 January 2019 13:45:52
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: 1bd6dadfc91f
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 5
+uwsgi socket 0 bound to TCP address 127.0.0.1:43641 (port auto-assigned) fd 4
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x558364d26340
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x558364d26340 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 16, cores: 1)
+spawned uWSGI http 1 (pid: 18)
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 12:39:39 2019] ***
+compiled with version: 6.3.0 20170516 on 29 January 2019 13:45:52
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: f258f5e2c078
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+writing pidfile to /code/DjangoVue/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:41259 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x563dabe4f350
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x563dabe4f350 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 1)
+spawned uWSGI http 1 (pid: 8)
+Python auto-reloader enabled
+gateway "uWSGI http 1" has been buried (pid: 8)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /code
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (127.0.0.1:41259)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /code/DjangoVue/django.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 12:40:04 2019] ***
+compiled with version: 6.3.0 20170516 on 29 January 2019 13:45:52
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: f258f5e2c078
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 5
+uwsgi socket 0 bound to TCP address 127.0.0.1:43341 (port auto-assigned) fd 4
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x56107d464340
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x56107d464340 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 10, cores: 1)
+spawned uWSGI http 1 (pid: 12)
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 12:41:02 2019] ***
+compiled with version: 6.3.0 20170516 on 30 January 2019 12:40:33
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: 294dc5a7106d
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+writing pidfile to /code/DjangoVue/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:42965 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x55fc69156350
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55fc69156350 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 1)
+spawned uWSGI http 1 (pid: 8)
+Python auto-reloader enabled
+/usr/local/lib/python3.7/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Bad Request: /obtain_jwt_token/
+[pid: 7|app: 0|req: 1/1] 172.23.0.4 () {50 vars in 924 bytes} [Wed Jan 30 12:41:08 2019] POST /obtain_jwt_token/ => generated 40 bytes in 570 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+Not Found: /api-token-auth/
+[pid: 7|app: 0|req: 2/2] 172.23.0.4 () {36 vars in 450 bytes} [Wed Jan 30 12:41:34 2019] POST /api-token-auth/ => generated 2545 bytes in 6 msecs (HTTP/1.0 404) 4 headers in 116 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./DjangoVue/urls.py has been modified
+gateway "uWSGI http 1" has been buried (pid: 8)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 7)...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /code
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (127.0.0.1:42965)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /code/DjangoVue/django.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 12:42:00 2019] ***
+compiled with version: 6.3.0 20170516 on 30 January 2019 12:40:33
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: 294dc5a7106d
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 5
+uwsgi socket 0 bound to TCP address 127.0.0.1:34621 (port auto-assigned) fd 4
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x55e4aa293340
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55e4aa293340 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 11, cores: 1)
+spawned uWSGI http 1 (pid: 13)
+Python auto-reloader enabled
+/usr/local/lib/python3.7/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Bad Request: /obtain_jwt_token/
+[pid: 11|app: 0|req: 1/1] 172.23.0.4 () {50 vars in 925 bytes} [Wed Jan 30 12:42:14 2019] POST /obtain_jwt_token/ => generated 40 bytes in 297 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+Bad Request: /obtain_jwt_token/
+[pid: 11|app: 0|req: 2/2] 172.23.0.4 () {44 vars in 819 bytes} [Wed Jan 30 12:42:54 2019] POST /obtain_jwt_token/ => generated 40 bytes in 2 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+Internal Server Error: /obtain_jwt_token/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 583, in connect
+    **kwargs)
+  File "/usr/local/lib/python3.7/socket.py", line 727, in create_connection
+    raise err
+  File "/usr/local/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 194, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 99] Cannot assign requested address)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework_jwt/views.py", line 57, in post
+    if serializer.is_valid():
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/serializers.py", line 236, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/serializers.py", line 437, in run_validation
+    value = self.validate(value)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework_jwt/serializers.py", line 50, in validate
+    user = authenticate(**credentials)
+  File "/usr/local/lib/python3.7/site-packages/django/contrib/auth/__init__.py", line 73, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/usr/local/lib/python3.7/site-packages/django/contrib/auth/backends.py", line 16, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/usr/local/lib/python3.7/site-packages/django/contrib/auth/base_user.py", line 44, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 393, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 250, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1063, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 255, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 232, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 194, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 99] Cannot assign requested address)")
+[pid: 11|app: 0|req: 3/3] 172.23.0.4 () {44 vars in 819 bytes} [Wed Jan 30 12:43:09 2019] POST /obtain_jwt_token/ => generated 17957 bytes in 69 msecs (HTTP/1.0 500) 4 headers in 145 bytes (1 switches on core 0)
+Internal Server Error: /obtain_jwt_token/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 583, in connect
+    **kwargs)
+  File "/usr/local/lib/python3.7/socket.py", line 727, in create_connection
+    raise err
+  File "/usr/local/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 194, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 99] Cannot assign requested address)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework_jwt/views.py", line 57, in post
+    if serializer.is_valid():
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/serializers.py", line 236, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/serializers.py", line 437, in run_validation
+    value = self.validate(value)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework_jwt/serializers.py", line 50, in validate
+    user = authenticate(**credentials)
+  File "/usr/local/lib/python3.7/site-packages/django/contrib/auth/__init__.py", line 73, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/usr/local/lib/python3.7/site-packages/django/contrib/auth/backends.py", line 16, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/usr/local/lib/python3.7/site-packages/django/contrib/auth/base_user.py", line 44, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 393, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 250, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1063, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 255, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 232, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 194, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 99] Cannot assign requested address)")
+[pid: 11|app: 0|req: 4/4] 172.23.0.4 () {44 vars in 819 bytes} [Wed Jan 30 12:43:22 2019] POST /obtain_jwt_token/ => generated 17957 bytes in 50 msecs (HTTP/1.0 500) 4 headers in 145 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./DjangoVue/settings.py has been modified
+gateway "uWSGI http 1" has been buried (pid: 13)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 11)...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /code
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 4 mapped to socket 0 (127.0.0.1:34621)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /code/DjangoVue/django.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 12:44:31 2019] ***
+compiled with version: 6.3.0 20170516 on 30 January 2019 12:40:33
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: 294dc5a7106d
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 5
+uwsgi socket 0 bound to TCP address 127.0.0.1:45785 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x56312b2b0340
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x56312b2b0340 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 22, cores: 1)
+spawned uWSGI http 1 (pid: 24)
+Python auto-reloader enabled
+/usr/local/lib/python3.7/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Internal Server Error: /obtain_jwt_token/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'django.auth_user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework_jwt/views.py", line 57, in post
+    if serializer.is_valid():
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/serializers.py", line 236, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework/serializers.py", line 437, in run_validation
+    value = self.validate(value)
+  File "/usr/local/lib/python3.7/site-packages/rest_framework_jwt/serializers.py", line 50, in validate
+    user = authenticate(**credentials)
+  File "/usr/local/lib/python3.7/site-packages/django/contrib/auth/__init__.py", line 73, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/usr/local/lib/python3.7/site-packages/django/contrib/auth/backends.py", line 16, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/usr/local/lib/python3.7/site-packages/django/contrib/auth/base_user.py", line 44, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 393, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 250, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1065, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'django.auth_user' doesn't exist")
+[pid: 22|app: 0|req: 1/1] 172.23.0.4 () {44 vars in 819 bytes} [Wed Jan 30 12:44:46 2019] POST /obtain_jwt_token/ => generated 18686 bytes in 407 msecs (HTTP/1.0 500) 4 headers in 145 bytes (1 switches on core 0)
+Bad Request: /obtain_jwt_token/
+[pid: 22|app: 0|req: 2/2] 172.23.0.4 () {44 vars in 819 bytes} [Wed Jan 30 12:45:51 2019] POST /obtain_jwt_token/ => generated 68 bytes in 129 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+Bad Request: /obtain_jwt_token/
+[pid: 22|app: 0|req: 3/3] 172.23.0.4 () {44 vars in 819 bytes} [Wed Jan 30 12:46:12 2019] POST /obtain_jwt_token/ => generated 68 bytes in 119 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+Bad Request: /obtain_jwt_token/
+[pid: 22|app: 0|req: 4/4] 172.23.0.4 () {44 vars in 819 bytes} [Wed Jan 30 12:46:34 2019] POST /obtain_jwt_token/ => generated 40 bytes in 3 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+Bad Request: /obtain_jwt_token/
+[pid: 22|app: 0|req: 5/5] 172.23.0.4 () {44 vars in 819 bytes} [Wed Jan 30 12:46:45 2019] POST /obtain_jwt_token/ => generated 68 bytes in 121 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+[pid: 22|app: 0|req: 6/6] 172.23.0.4 () {44 vars in 819 bytes} [Wed Jan 30 12:47:43 2019] POST /obtain_jwt_token/ => generated 183 bytes in 122 msecs (HTTP/1.0 200) 5 headers in 145 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./DjangoVue/urls.py has been modified
+gateway "uWSGI http 1" has been buried (pid: 24)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 22)...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /code
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (127.0.0.1:45785)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /code/DjangoVue/django.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 12:48:12 2019] ***
+compiled with version: 6.3.0 20170516 on 30 January 2019 12:40:33
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: 294dc5a7106d
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 5
+uwsgi socket 0 bound to TCP address 127.0.0.1:43613 (port auto-assigned) fd 4
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x55f760272340
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55f760272340 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 40, cores: 1)
+spawned uWSGI http 1 (pid: 42)
+Python auto-reloader enabled
+/usr/local/lib/python3.7/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/deprecation.py", line 90, in __call__
+    response = self.process_request(request)
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 53, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 93, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:81/api/auth/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[pid: 40|app: 0|req: 1/1] 172.23.0.4 () {44 vars in 801 bytes} [Wed Jan 30 12:48:18 2019] POST /api/auth => generated 57518 bytes in 371 msecs (HTTP/1.0 500) 2 headers in 77 bytes (1 switches on core 0)
+Internal Server Error: /api/auth
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/utils/deprecation.py", line 90, in __call__
+    response = self.process_request(request)
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 53, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/usr/local/lib/python3.7/site-packages/django/middleware/common.py", line 93, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:81/api/auth/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[pid: 40|app: 0|req: 2/2] 172.23.0.4 () {44 vars in 801 bytes} [Wed Jan 30 12:48:59 2019] POST /api/auth => generated 57518 bytes in 36 msecs (HTTP/1.0 500) 2 headers in 77 bytes (1 switches on core 0)
+[pid: 40|app: 0|req: 3/3] 172.23.0.4 () {44 vars in 803 bytes} [Wed Jan 30 12:49:04 2019] POST /api/auth/ => generated 183 bytes in 126 msecs (HTTP/1.0 200) 5 headers in 145 bytes (1 switches on core 0)
+Bad Request: /api/refresh/
+[pid: 40|app: 0|req: 4/4] 172.23.0.4 () {44 vars in 809 bytes} [Wed Jan 30 12:49:31 2019] POST /api/refresh/ => generated 37 bytes in 2 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+[pid: 40|app: 0|req: 5/5] 172.23.0.4 () {44 vars in 803 bytes} [Wed Jan 30 12:49:52 2019] POST /api/auth/ => generated 183 bytes in 117 msecs (HTTP/1.0 200) 5 headers in 145 bytes (1 switches on core 0)
+Bad Request: /api/auth/
+[pid: 40|app: 0|req: 6/6] 172.23.0.4 () {44 vars in 804 bytes} [Wed Jan 30 12:50:06 2019] POST /api/auth/ => generated 79 bytes in 3 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+[pid: 40|app: 0|req: 7/7] 172.23.0.4 () {44 vars in 804 bytes} [Wed Jan 30 12:50:20 2019] POST /api/auth/ => generated 183 bytes in 126 msecs (HTTP/1.0 200) 5 headers in 145 bytes (1 switches on core 0)
+Bad Request: /api/auth/
+[pid: 40|app: 0|req: 8/8] 172.23.0.4 () {44 vars in 803 bytes} [Wed Jan 30 12:51:22 2019] POST /api/auth/ => generated 68 bytes in 112 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+Bad Request: /api/refresh/
+[pid: 40|app: 0|req: 9/9] 172.23.0.4 () {44 vars in 810 bytes} [Wed Jan 30 12:51:40 2019] POST /api/refresh/ => generated 52 bytes in 9 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+Bad Request: /api/refresh/
+[pid: 40|app: 0|req: 10/10] 172.23.0.4 () {44 vars in 810 bytes} [Wed Jan 30 12:52:06 2019] POST /api/refresh/ => generated 52 bytes in 7 msecs (HTTP/1.0 400) 5 headers in 153 bytes (1 switches on core 0)
+gateway "uWSGI http 1" has been buried (pid: 42)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /code
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 4 mapped to socket 0 (127.0.0.1:43613)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /code/DjangoVue/django.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 13:08:18 2019] ***
+compiled with version: 6.3.0 20170516 on 30 January 2019 12:40:33
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: 294dc5a7106d
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 5
+uwsgi socket 0 bound to TCP address 127.0.0.1:37455 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x564ca59cf340
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x564ca59cf340 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 44, cores: 1)
+spawned uWSGI http 1 (pid: 46)
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Jan 30 13:08:29 2019] ***
+compiled with version: 6.3.0 20170516 on 30 January 2019 12:40:33
+os: Linux-4.9.125-linuxkit #1 SMP Fri Sep 7 08:20:28 UTC 2018
+nodename: 76d90f5e9858
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /code
+writing pidfile to /code/DjangoVue/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:44053 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Jan 23 2019, 02:31:57)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x55d862a53350
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55d862a53350 pid: 1 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 6, cores: 1)
+spawned uWSGI http 1 (pid: 8)
+Python auto-reloader enabled
