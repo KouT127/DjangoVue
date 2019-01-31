@@ -9,7 +9,5 @@ class UserSerializer(serializers.ModelSerializer):
         fields = (
             'name',
             'email',
-            'description',
-            'website',
         )
 

@@ -160,3 +160,6 @@ try:
     from .local_settings import CORS_ORIGIN_WHITELIST, DEBUG
 except ImportError:
     pass
+
+# AUTHで使用するUSERMODELを変更する
+AUTH_USER_MODEL = 'users.User'
