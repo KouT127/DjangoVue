@@ -23,10 +23,10 @@ from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
-    url(r'^api/', include(user_router.urls)),
+    url(r'^api/v1/', include(user_router.urls)),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
     url(r'^users/$', TemplateView.as_view(template_name='index.html')),
-    url(r'api/auth/', obtain_jwt_token),
-    url(r'^api/refresh/', refresh_jwt_token),
+    url(r'^api/v1/auth/', obtain_jwt_token),
+    url(r'^api/v1/refresh/', refresh_jwt_token),
     # 静的ファイルのルーティング /static/がきた場合
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 

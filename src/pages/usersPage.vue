@@ -13,8 +13,8 @@
                     <template slot="items" slot-scope="props">
                     <td class="text-xs-left">{{ props.item.name }}</td>
                     <td class="text-xs-left">{{ props.item.email }}</td>
-                    <td class="text-xs-left">{{ props.item.description }}</td>
-                    <td class="text-xs-left">{{ props.item.website }}</td>
+                    <td class="text-xs-left">{{ props.item.full_name }}</td>
+                    <td class="text-xs-left">{{ props.item.date_joined }}</td>
                     </template>
                 </v-data-table>
             </v-card>
@@ -51,10 +51,10 @@
 					 	value: 'email' },
 					{ text: 'Description',
 						align: 'left',
-						value: 'description' },
+						value: 'full_name' },
 					{ text: 'Website', 
 						align: 'left',
-						value: 'website' }
+						value: 'date_joined' }
         ]
       }
     },
