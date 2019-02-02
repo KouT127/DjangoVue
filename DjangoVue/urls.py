@@ -18,12 +18,14 @@ from django.conf import settings
 from django.contrib import admin
 from django.conf.urls import url,include
 from users.urls import router as user_router
+from posts.urls import router as post_router
 from django.views.generic import TemplateView
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
     url(r'^api/v1/', include(user_router.urls)),
+    url(r'^api/v1/', include(post_router.urls)),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
     url(r'^users/$', TemplateView.as_view(template_name='index.html')),
     url(r'^api/v1/auth/', obtain_jwt_token),
