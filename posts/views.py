@@ -1,6 +1,7 @@
 from rest_framework import status
 from rest_framework import viewsets, filters
 from rest_framework.response import Response
+from django.shortcuts import get_object_or_404
 from .models import Post
 from .serializer import PostSerializer
 import logging
@@ -24,17 +25,20 @@ class PostViewSet(viewsets.ModelViewSet):
         logger = logging.getLogger(__name__)
         logger.error('request body: %s', request.data)
         user = request.user
-        user.post_set.create(content=request.data['content'])
-        user.save()
-        return Response({}, status=status.HTTP_200_OK)
+        serializer = PostSerializer(data=request.data)
+        if serializer.is_valid():
+            content = serializer.validated_data
+            user.post_set.create(content=content)
+            user.save()
+            return Response({}, status=status.HTTP_200_OK)
 
     # Get 詳細　/id
     def retrieve(self, request, pk=None):
-        pass
-        # queryset = Post.objects.all()
-        # post = get_object_or_404(queryset, pk=pk)
-        # serializer = PostSerializer(post)
-        # return Response(serializer.data)
+        queryset = Post.objects.all()
+        post = get_object_or_404(queryset, pk=pk)
+        # Serializeして整形
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
     
     # Put　更新(全部) /id
     def update(self, request, pk=None):
