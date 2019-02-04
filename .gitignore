@@ -13,7 +13,11 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
-
+# static files
 static
-
+# db files
 /sql/db
+# log files
+*.log
+# pycache
+*.pyc
