@@ -31,6 +31,10 @@ class PostViewSet(viewsets.ModelViewSet):
     # Get 詳細　/id
     def retrieve(self, request, pk=None):
         pass
+        # queryset = Post.objects.all()
+        # post = get_object_or_404(queryset, pk=pk)
+        # serializer = PostSerializer(post)
+        # return Response(serializer.data)
     
     # Put　更新(全部) /id
     def update(self, request, pk=None):
