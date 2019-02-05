@@ -12,20 +12,24 @@ class PostViewSet(viewsets.ModelViewSet):
     # TODO:クライアント側のこと考え、エラーメッセージのModelを定義する必要あり
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+    def loggingRequest(request):
+        pass
+        # logger = logging.getLogger(__name__)
+        # log = 'request method: {} body: {}'
+        # log.format((request.method, request.data))
+        # logger.error(log)
     
     # Get　一覧取得
     def list(self, request):
-        logger = logging.getLogger(__name__)
-        logger.error('request get')
+        self.loggingRequest(request)
         queryset = Post.objects.all()
         serializer = PostSerializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     # Post　新規登録
     def create(self, request):
-        logger = logging.getLogger(__name__)
-        logger.error('request body: %s', request.data)
-        user = request.user
+        self.loggingRequest(request)
         serializer = PostSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         content = serializer.validated_data
@@ -34,6 +38,7 @@ class PostViewSet(viewsets.ModelViewSet):
 
     # Get 詳細　/id
     def retrieve(self, request, pk=None):
+        self.loggingRequest(request)
         post = get_object_or_404(self.queryset, pk=pk)
         # Serializeして整形
         serializer = PostSerializer(post)
@@ -41,8 +46,7 @@ class PostViewSet(viewsets.ModelViewSet):
     
     # Put　更新(全部) /id
     def update(self, request, pk=None):
-        logger = logging.getLogger(__name__)
-        logger.error('request body: %s', request.data)
+        self.loggingRequest(request)
         user = request.user
         post = Post.objects.get(pk=pk)
         serializer = PostSerializer(post, data=request.data)
@@ -56,6 +60,7 @@ class PostViewSet(viewsets.ModelViewSet):
     
     # Delete 削除 /id
     def destroy(self, request, pk=None):
+        self.loggingRequest(request)
         post = get_object_or_404(self.queryset, pk=pk)
         post.delete()
         return Response(status=status.HTTP_200_OK)
