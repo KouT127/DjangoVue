@@ -26,11 +26,11 @@ class PostViewSet(viewsets.ModelViewSet):
         logger.error('request body: %s', request.data)
         user = request.user
         serializer = PostSerializer(data=request.data)
-        if serializer.is_valid():
-            content = serializer.validated_data
-            user.post_set.create(content=content)
-            user.save()
-            return Response({}, status=status.HTTP_200_OK)
+        serializer.is_valid(raise_exception=True)
+        content = serializer.validated_data
+        user.post_set.create(content=content)
+        user.save()
+        return Response(status=status.HTTP_200_OK)
 
     # Get 詳細　/id
     def retrieve(self, request, pk=None):
@@ -42,7 +42,14 @@ class PostViewSet(viewsets.ModelViewSet):
     
     # Put　更新(全部) /id
     def update(self, request, pk=None):
-        pass
+        logger = logging.getLogger(__name__)
+        logger.error('request body: %s', request.data)
+        user = request.user
+        post = Post.objects.get(pk=pk)
+        serializer = PostSerializer(post, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(status=status.HTTP_200_OK)
     
     # Patch 更新(一部) /id
     def partial_update(self, request, pk=None):

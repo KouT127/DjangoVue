@@ -12,6 +12,8 @@ class PostSerializer(serializers.ModelSerializer):
             'content',
             'created_at',
         )
+        read_only_fields = ()
+        extra_kwargs = {}
     
-    # def create(self, validated_data):
-    #     return Post.objects.create(**validated_data)
+    def create(self, validated_data):
+        return Post.objects.create(**validated_data)
