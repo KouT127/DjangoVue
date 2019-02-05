@@ -29,8 +29,7 @@ class PostViewSet(viewsets.ModelViewSet):
         serializer = PostSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         content = serializer.validated_data
-        user.post_set.create(content=content)
-        user.save()
+        serializer.save(user=request.user)
         return Response(status=status.HTTP_200_OK)
 
     # Get 詳細　/id
