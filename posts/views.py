@@ -9,6 +9,7 @@ import logging
 
 class PostViewSet(viewsets.ModelViewSet):
     
+    # TODO:クライアント側のこと考え、エラーメッセージのModelを定義する必要あり
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     
@@ -34,8 +35,7 @@ class PostViewSet(viewsets.ModelViewSet):
 
     # Get 詳細　/id
     def retrieve(self, request, pk=None):
-        queryset = Post.objects.all()
-        post = get_object_or_404(queryset, pk=pk)
+        post = get_object_or_404(self.queryset, pk=pk)
         # Serializeして整形
         serializer = PostSerializer(post)
         return Response(serializer.data)
@@ -57,5 +57,7 @@ class PostViewSet(viewsets.ModelViewSet):
     
     # Delete 削除 /id
     def destroy(self, request, pk=None):
-        pass
+        post = get_object_or_404(self.queryset, pk=pk)
+        post.delete()
+        return Response(status=status.HTTP_200_OK)
 
