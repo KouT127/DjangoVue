@@ -33,8 +33,6 @@ class PostViewSet(viewsets.ModelViewSet):
             return self.get_paginated_response(serializer.data)
         serializer = PostSerializer(self.queryset, many=True)
         return Response(serializer.data)
-        # serializer = PostSerializer(self.queryset, many=True)
-        # return Response(serializer.data, status=status.HTTP_200_OK)
 
     # Post　新規登録
     def create(self, request):
