@@ -1,13 +1,20 @@
 from rest_framework import status
-from rest_framework import viewsets, filters
+from rest_framework import viewsets
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+from django_filters import rest_framework as filters
 from .models import Post
 from .serializer import PostSerializer
 from .small_results_set_pagination import SmallResultsSetPagination
 
 import logging
 
+class PostFilter(filters.FilterSet):
+    content = filters.CharFilter(field_name="content", lookup_expr='contains')
+
+    class Meta:
+        model = Post
+        fields = ['content', 'created_at']
 
 class PostViewSet(viewsets.ModelViewSet):
     
@@ -16,18 +23,29 @@ class PostViewSet(viewsets.ModelViewSet):
     page_size = 10
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    fiterset_class = PostFilter
 
     # def loggingRequest(request):
     #     pass
         # logger = logging.getLogger(__name__)
         # log = 'request method: {} body: {}'
-        # log.format((request.method, request.data))
+        # log.format((request.method, ruest.data))
         # logger.error(log)
-    
+    def get_queryset(self):
+        queryset = Post.objects.all()
+        name = self.request.query_params.get('name')
+        content = self.request.query_params.get('content')
+        if content:
+            queryset = queryset.filter(content__contains=content)
+        if name:
+            queryset = queryset.filter(user__username__contains=name)
+        return queryset
+
     # Get　一覧取得
     def list(self, request):
         # self.loggingRequest(request)
-        page = self.paginate_queryset(self.queryset)
+        # posts = self.get_queryset()
+        page = self.paginate_queryset(self.get_queryset())
         if page is not None:
             serializer = PostSerializer(page, many=True)
             return self.get_paginated_response(serializer.data)
@@ -71,4 +89,4 @@ class PostViewSet(viewsets.ModelViewSet):
         post = get_object_or_404(self.queryset, pk=pk)
         post.delete()
         return Response(status=status.HTTP_200_OK)
-
+    
