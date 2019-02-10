@@ -9,13 +9,6 @@ from .small_results_set_pagination import SmallResultsSetPagination
 
 import logging
 
-class PostFilter(filters.FilterSet):
-    content = filters.CharFilter(field_name="content", lookup_expr='contains')
-
-    class Meta:
-        model = Post
-        fields = ['content', 'created_at']
-
 class PostViewSet(viewsets.ModelViewSet):
     
     # TODO:クライアント側のこと考え、エラーメッセージのModelを定義する必要あり
@@ -23,8 +16,6 @@ class PostViewSet(viewsets.ModelViewSet):
     page_size = 10
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    fiterset_class = PostFilter
-
     # def loggingRequest(request):
     #     pass
         # logger = logging.getLogger(__name__)
