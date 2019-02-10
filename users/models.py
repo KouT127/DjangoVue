@@ -9,7 +9,7 @@ import uuid as uuid_lib
 # Create your models here.
 
 def imageFile(instance, filename):
-    return '/'.join( ['user_images', str(instance.uuid), filename] )
+    return '/'.join( ['static/media', str(instance.uuid), filename] )
 
 class Department(models.Model):
     """所属 兼任可"""
