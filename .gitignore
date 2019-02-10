@@ -22,3 +22,5 @@ static
 *.log
 # pycache
 *.pyc
+# image
+*.png

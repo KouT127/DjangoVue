@@ -16,7 +16,7 @@ class AdminUserAdmin(UserAdmin):
     # 一行毎に変更可能
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
-        (_('Personal info'), {'fields': ('full_name', 'email','departments')}),
+        (_('Personal info'), {'fields': ('full_name', 'image', 'email','departments')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),

@@ -8,6 +8,9 @@ import uuid as uuid_lib
 
 # Create your models here.
 
+def imageFile(instance, filename):
+    return '/'.join( ['user_images', str(instance.uuid), filename] )
+
 class Department(models.Model):
     """所属 兼任可"""
 
@@ -61,6 +64,11 @@ class User(AbstractBaseUser, PermissionsMixin):
         help_text=_('Specific Departments for this user.'),
         related_name="user_set",
         related_query_name="user",
+    )
+
+    image = models.ImageField(
+        upload_to=imageFile,
+        max_length=254, blank=True, null=True
     )
 
     # defaultでデフォルト値を設定
