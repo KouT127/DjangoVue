@@ -116,3 +116,20 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_short_name(self):
         return self.full_name
+
+    # Followerを取得する
+    def get_followers(self):
+        relations = Relationship.objects.filter(follow=self)
+        return relations
+
+    def get_follows(self):
+        relations = Relationship.objects.filter(follower=self)
+        return relations
+
+class Relationship(models.Model):
+    follow = models.ForeignKey(User, related_name='follows', on_delete=models.CASCADE)
+    follower = models.ForeignKey(User, related_name='followers', on_delete=models.CASCADE)
+
+    class Meta:
+        # 複合ユニークキー
+        unique_together = ('follow', 'follower')

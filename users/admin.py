@@ -1,10 +1,14 @@
-from .models import User, Department
+from .models import User, Department, Relationship
 from django.contrib.auth.admin import UserAdmin
 from django.contrib import admin
 from django.utils.translation import gettext, gettext_lazy as _
 
 @admin.register(Department)
 class AdminDepartment(admin.ModelAdmin):
+    pass
+
+@admin.register(Relationship)
+class AdminRelationship(admin.ModelAdmin):
     pass
 
 # adminパスにきた時に、ページに表示する
